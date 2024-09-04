@@ -6,7 +6,8 @@ import ReactDOM from 'react-dom/client';
 
 import { Routes } from './routes';
 
-ReactDOM.createRoot(document.getElementById('root')).render(
+// Asserção de tipo (as): p/ cenários em que o TS não consegue identificar automaticante o tipo!
+ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
     <Routes />
   </React.StrictMode>,
