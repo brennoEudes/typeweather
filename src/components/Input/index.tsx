@@ -1,7 +1,11 @@
 import './styles.css';
 import { Spin } from '../Spin';
 
-export function Input({ isLoading = false, ...rest }) {
+interface Props {
+  isLoading?: boolean; // ? significa que a propriedade é opcional.
+}
+
+export function Input({ isLoading = false, ...rest }: Props) {
   return (
     <div className="input" >
       <input type='text' {...rest} />
