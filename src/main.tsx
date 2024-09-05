@@ -6,7 +6,7 @@ import ReactDOM from 'react-dom/client';
 
 import { Routes } from './routes';
 
-// Asserção de tipo (as): p/ cenários em que o TS não consegue identificar automaticante o tipo!
+// DEFINIÇÃO ASSERTIVA: asserção de tipo (as): p/ cenários em que o TS não consegue identificar automaticante o tipo!
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
     <Routes />

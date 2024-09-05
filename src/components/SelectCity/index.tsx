@@ -8,7 +8,8 @@ import {
 } from "../../services/getCityByNameService";
 
 export function SelectCity({ onSelect }) {
-  const [city, setCity] = useState<CityProps[]>([]); // O estado anterior era null, mas após criarmos a interface CityProps, definimos como um array de CityProps e que começa com um array vazio.
+  const [city, setCity] = useState<CityProps[]>([]); // DEFINIÇÃO GENERIC: é a definição de tipagem flexível, permitindo a customização. O estado sempre espera a def da tipagem! 
+  // O estado anterior era null. Após, criamos a interface CityProps, definimos como um array de CityProps e que começa com um array vazio.
   const [search, setSearch] = useState(""); // INFERÊNCIA: aqui, o estado inicial por ser string vazia permite q o TS faça a inferência do tipo string.
   const [isLoading, setIsLoading] = useState(false);
 
