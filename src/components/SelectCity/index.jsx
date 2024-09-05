@@ -6,7 +6,7 @@ import { getCityByNameService } from '../../services/getCityByNameService';
 
 export function SelectCity({ onSelect }) {
   const [city, setCity] = useState();
-  const [search, setSearch] = useState('');
+  const [search, setSearch] = useState(''); // INFERÊNCIA: aqui, o estado inicial por ser string vazia permite q o TS faça a inferência do tipo string.
   const [isLoading, setIsLoading] = useState(false);
 
   async function getCities(name) {
