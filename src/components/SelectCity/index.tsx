@@ -7,8 +7,13 @@ import {
   CityProps,
 } from "../../services/getCityByNameService";
 
-export function SelectCity({ onSelect }) {
-  const [city, setCity] = useState<CityProps[]>([]); // DEFINIÇÃO GENERIC: é a definição de tipagem flexível, permitindo a customização. O estado sempre espera a def da tipagem! 
+interface Props {
+  onSelect: (item: CityProps) => void; // void é retorno vazio.
+}
+
+// Componente SelectCity recebe onSelect como propriedade, que é uma função que recebe um item do tipo CityProps como parâmetro e não retorna nada.
+export function SelectCity({ onSelect }: Props) {
+  const [city, setCity] = useState<CityProps[]>([]); // DEFINIÇÃO GENERIC: é a definição de tipagem flexível, permitindo a customização. O estado sempre espera a def da tipagem!
   // O estado anterior era null. Após, criamos a interface CityProps, definimos como um array de CityProps e que começa com um array vazio.
   const [search, setSearch] = useState(""); // INFERÊNCIA: aqui, o estado inicial por ser string vazia permite q o TS faça a inferência do tipo string.
   const [isLoading, setIsLoading] = useState(false);
