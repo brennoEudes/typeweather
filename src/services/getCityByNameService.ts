@@ -1,6 +1,14 @@
 import { api } from "./api";
 
-export async function getCityByNameService(name) {
+// INTERFACE: é uma representação, ou forma de definir um tipo de dado.
+export interface CityProps {
+  id: number;
+  name: string;
+  longitude: number;
+  latitude: number;
+}
+
+export async function getCityByNameService(name: string) {
   try {
     const { data } = await api.get(`/weather?q=${name}`);
 
@@ -11,8 +19,8 @@ export async function getCityByNameService(name) {
       latitude: data.coord.lat,
     };
 
-    return city;
+    return [city];
   } catch (error) {
-    return null;
+    return [];
   }
 }
